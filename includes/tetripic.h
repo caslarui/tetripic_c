@@ -1,9 +1,10 @@
-#ifndef TETRIPIC_HPP
-# define TETRIPIC_HPP
+// Copyright [2019] <Ligia Dolinta 311CD>
+#ifndef TETRIPIC_H
+# define TETRIPIC_H
 
-#include "bmp_file_info.h"
+#include "./bmp_file_info.h"
 
-//MAIN STRUCT
+// MAIN STRUCT
 typedef struct {
     bmp_fileheader BMP_HEADER;
     bmp_infoheader BMP_FILEINFO;
@@ -28,13 +29,13 @@ typedef struct {
 
 //*************************************************************************
 
-//COLOR_FUNCTIONS
+// COLOR_FUNCTIONS
 
 bmp_pixelcolor    blue(bmp_pixelcolor pixel); // Coloram pixelul in albastru
 bmp_pixelcolor    green(bmp_pixelcolor pixel); // Coloram pixelul in verde
 bmp_pixelcolor    red(bmp_pixelcolor pixel); // Coloraram pixelul in rosu
 bmp_pixelcolor    yellow(bmp_pixelcolor pixel); // Coloram pixelul in galben
-bmp_pixelcolor    orange(bmp_pixelcolor pixel); // Coloram pixelul in portocaliu
+bmp_pixelcolor    orange(bmp_pixelcolor pixel); // Coloram pixelul in oranj
 bmp_pixelcolor    pink(bmp_pixelcolor pixel); // Coloram pixelul in roz
 bmp_pixelcolor    white(bmp_pixelcolor pixel); // Coloram pixelul in alb
 bmp_pixelcolor    black(bmp_pixelcolor pixel); // Coloram pixelul in negru
@@ -56,7 +57,7 @@ int     reallocMatrix(int** matrix, int row, int col);
 void    freeMatrix_i(int **matrix, int row);
 void    freeMatrix_c(char **matrix, int row);
 
-//*************************************************************
+// *************************************************************
 
 // Handle functions
 void    rotate(tetrimon input, tetrimon *output,  int angle);
@@ -73,7 +74,6 @@ void    copy_array_m(tetri_map src, int*** dest);
 char     **read_input(const char* filename);
 
 void    init_piece(tetrimon *input, char piece_type);
-//
 
 void    print_bgr(bmp_pixelcolor pixel);
 void    print_map(tetri_map game);
@@ -87,9 +87,9 @@ void    parse_map(bmp_pixelcolor **pixel, tetri_map game);
 
 void    init_4_lines(tetri_map *game);
 
-//***********************************************************
+// ***********************************************************
 
-//Task functions
+// Task functions
 void    draw_piece(unsigned int rot, const char piece_type[1]);
 void    add_border(tetrimon *input);
 int     solve_tetris(tetri_map *game, const char c, int rot,  int col);

@@ -1,11 +1,6 @@
-#ifndef BMP_FILEINFO_H
-# define BMP_FILEINFO_H
-
-// #include <cstdint>
-// #include <iostream>
-// #include <fstream>
-// #include <string>
-// using namespace std;
+// Copyright [2019] <Ligia Dolinta 311CD>
+#ifndef _BMP_FILEINFO_H_
+# define _BMP_FILEINFO_H_
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -23,7 +18,7 @@ typedef struct {
     uint16_t        unused1;
     uint16_t        unused2;
     uint32_t        imageDataOffset; /* Offset to the start of image data */
-}bmp_fileheader; //14bytes
+}bmp_fileheader; // 14bytes
 
 typedef struct {
     uint32_t        biSize; /* Size of the info header - 40 bytes */
@@ -38,7 +33,7 @@ typedef struct {
     int32_t         biYPelsPerMeter;
     uint32_t        biClrUsed;
     uint32_t        biClrImportant;
-}bmp_infoheader; //40bytes
+}bmp_infoheader; // 40bytes
 
 #pragma pack()
 
