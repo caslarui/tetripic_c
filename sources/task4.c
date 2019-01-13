@@ -1,3 +1,4 @@
+// Copyright [2019] <Ligia Dolinta 311CD>
 #include "../includes/tetripic.h"
 
 void task4(const char *bmp_name, const char *input_name) {
@@ -24,16 +25,16 @@ void task4(const char *bmp_name, const char *input_name) {
     words = ft_split(input[0]);
     moves_nbr = atoi(words[0]);
 
-    for(i = 0; i < moves_nbr; i++) {
+    for (i = 0; i < moves_nbr; i++) {
         words = ft_split(input[i + 1]);
         name = words[0][0];
         rot = atoi(words[1]);
         col = atoi(words[2]);
 
-        if(solve_tetris(&game, name, rot, col)) {
+        if (solve_tetris(&game, name, rot, col)) {
             break;
         }
-        if( i == moves_nbr - 1)
+        if (i == moves_nbr - 1)
             init_4_lines(&game);
     }
     draw_tetris(game, file.filename);

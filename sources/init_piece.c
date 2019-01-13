@@ -1,10 +1,11 @@
+// Copyright [2019] <Ligia Dolinta 311CD>
 #include "../includes/tetripic.h"
 
 void copy_array_p(tetrimon src, int*** dest) {
     int i, j;
 
     allocMatrix(dest, src.rows, src.cols);
-    
+
     for (i = 0; i < src.rows; i++)
         for (j = 0; j < src.cols; j++)
             (*dest)[i][j] = src.piece[i][j];
@@ -14,7 +15,7 @@ void copy_array_m(tetri_map src, int*** dest) {
     int i, j;
 
     allocMatrix(dest, src.height, src.width);
-    
+
     for (i = 0; i < src.height; i++)
         for (j = 0; j < src.width; j++)
             (*dest)[i][j] = src.map[i][j];
@@ -80,9 +81,8 @@ void init_t_piece(int*** piece) {
 }
 
 void init_piece(tetrimon *input, char piece_type) {
-
-    switch(piece_type) {
-       case 'O' : 
+    switch (piece_type) {
+       case 'O' :
             input->rows = 2;
             input->cols = 2;
             input->color = &yellow;

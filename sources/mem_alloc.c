@@ -1,10 +1,11 @@
+// Copyright [2019] <Ligia Dolinta 311CD>
 #include "../includes/tetripic.h"
 
 int allocMatrix(int*** matrix, int row, int col) {
     int i = 0;
 
     (*matrix)  = (int**)calloc(row, sizeof(int*));
-    for(i = 0; i < row; i++){
+    for (i = 0; i < row; i++) {
         (*matrix)[i] =  (int *)calloc(col, sizeof(int));
     }
     if (matrix)
@@ -15,7 +16,7 @@ int allocMatrix(int*** matrix, int row, int col) {
 
 void freeMatrix_i(int** matrix, int row) {
     int i;
-    for(i = 0; i < row; i++){
+    for (i = 0; i < row; i++) {
         free(matrix[i]);
     }
     free(matrix);
@@ -24,7 +25,7 @@ void freeMatrix_i(int** matrix, int row) {
 
 void freeMatrix_c(char** matrix, int row) {
     int i;
-    for(i = 0; i < row; i++){
+    for (i = 0; i < row; i++) {
         free(matrix[i]);
     }
     free(matrix);

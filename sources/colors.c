@@ -1,3 +1,4 @@
+// Copyright [2019] <Ligia Dolinta 311CD>
 #include "../includes/tetripic.h"
 
 bmp_pixelcolor blue(bmp_pixelcolor pixel) {
@@ -58,7 +59,7 @@ bmp_pixelcolor black(bmp_pixelcolor pixel) {
 
 bmp_pixelcolor white(bmp_pixelcolor pixel) {
     pixel.B = 255;
-    pixel.G = 255; 
+    pixel.G = 255;
     pixel.R = 255;
     return(pixel);
 }
@@ -66,7 +67,7 @@ bmp_pixelcolor white(bmp_pixelcolor pixel) {
 
 bmp_pixelcolor parse_color(int8_t color_index) {
     bmp_pixelcolor pixel;
-    switch(color_index) {
+    switch (color_index) {
         case 0 : pixel = black(pixel); break;
         case 1 : pixel = white(pixel); break;
         case 2 : pixel = yellow(pixel); break;

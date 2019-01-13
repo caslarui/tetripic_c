@@ -1,3 +1,4 @@
+// Copyright [2019] <Ligia Dolinta 311CD>
 #include "../includes/tetripic.h"
 
 static int count_words(char *str) {
@@ -60,10 +61,10 @@ int count_lines(const char *filename) {
     FILE    *fp = fopen(filename, "r");
     char    ch;
 
-    if(fp) {
-        while(!feof(fp)) {
+    if (fp) {
+        while (!feof(fp)) {
             ch = fgetc(fp);
-            if(ch == '\n') {
+            if (ch == '\n') {
                 count++;
             }
         }
@@ -77,7 +78,7 @@ void print_map(tetri_map game) {
 
     for (i = 0; i < game.height; i++) {
         for (j = 0; j < game.width; j++)
-            printf("%d ",game.map[i][j]);
+            printf("%d ", game.map[i][j]);
         printf("\n");
     }
 }
@@ -95,7 +96,7 @@ void print_piece(tetrimon piece) {
 
 
 
-void print_bgr(bmp_pixelcolor pixel) {   
+void print_bgr(bmp_pixelcolor pixel) {
     printf(" B: %d  G: %d  R: %d | ", pixel.B, pixel.G, pixel.R);
 }
 
@@ -107,14 +108,14 @@ char **read_input(const char* filename) {
     char** output;
 
     fp = fopen(filename, "r");
-    if(fp == NULL)  
+    if (fp == NULL)
         return(NULL);
 
     lines = count_lines(filename); // Determinam cate linii contine fisierul
 
     output = (char **)malloc(sizeof(char *) * lines); // Alocam memorie
     lines = 0;
-    while((getline(&buffer, &length, fp)) != -1) {
+    while ((getline(&buffer, &length, fp)) != -1) {
         output[lines++] = strdup(buffer); // Copiem intr-un tabel referinta
     }
     fclose(fp);
@@ -129,7 +130,7 @@ void parse_map(bmp_pixelcolor **pixel, tetri_map game) {
     int j = 0;
     int img_height = (game.height + 4) * 10;
     int img_width = game.width * 10;
-    int k;    
+    int k;
 
     k = game.height - 1;
     for (i = 0; i < img_height - 40; i += 10) {
